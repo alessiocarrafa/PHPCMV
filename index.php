@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html lang="en" ng-app="PHPCMV_App">
     <head>
         <meta charset="UTF-8">
@@ -26,9 +21,34 @@ and open the template in the editor.
     </head>
     <body layout="column" ng-controller="MainCtrl">
 		<h1>Hello World!</h1>
+		<?php echo("<h3>From PHP too :)</h3>"); ?>
+		<h3>{{ angular_hello }}</h3>
+		</br>
+		
 		<?php
-			echo("<h1>From PHP too :)</h1>");
+			include_once( "class.php" );
+			
+			$test_c = new test_class();
+			
+			$arr = $test_c->initJSON();
+			
+			var_dump( $TYPES["_INT_"] ); echo("</br>");
+			
+			var_dump( $arr ); echo("</br>");
+			
+			$test_c->setInt(1);
+			
+			$arr = $test_c->initJSON();
+			
+			var_dump( $arr ); echo("</br>");
+			
+			$out = array_values( $arr );
+			echo( "<pre>" . json_encode($out). "</pre>" );
+			
+			//var_dump( $test_c );
+		
 		?>
-		<h1>{{ angular_hello }}</h1>
+		
+		
     </body>
 </html>
