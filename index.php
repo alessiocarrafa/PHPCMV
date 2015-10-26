@@ -44,9 +44,6 @@
 			
 			$out = array_values( $arr );
 			echo( "<pre>" . json_encode($out). "</pre>" );
-			
-			//var_dump( $test_c );
-		
 		?>
 		
 		

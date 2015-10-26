@@ -6,7 +6,7 @@
 		{
 			return get_object_vars( $this );
 		}
-	};
+	}
 	
 	class test_class extends CMV
 	{
